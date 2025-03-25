@@ -1,35 +1,21 @@
-# Vonge
+# Rosey Jekyll Starter
+Demonstrates a way to use Rosey to control multilingual content on your Jekyll site on CloudCannon.
 
-Vonge is a Personal portfolio/blog site template for Jekyll. Browse through a [live demo](https://jazzed-kale.cloudvent.net/).
-Increase the web presence of your brand with this configurable theme.
+Generates translation files that are editable on CloudCannon. The files needed by Rosey to create a multilingual site are generated  from those translations. Then on your production site Rosey generates a full multilingual site.
 
-![Vonge template screenshot](_screenshot.png)
+This is a demo site for how to use the Rosey CloudCannon Connector in Jekyll. The Rosey CloudCannon Connector has had the `rosey-connector` directory site mounted onto this site in order for it to run. This allows us to maintain one repository copy of `rosey-connector` for all SSGs, rather than maintaining them separately.
 
-Vonge was made by [CloudCannon](http://cloudcannon.com/), the JAMStack Cloud CMS.
-The component library is built and maintained for use with [Bookshop](https://github.com/cloudcannon/bookshop/)
+## Getting started
+Follow the guide [here](https://github.com/CloudCannon/rcc?tab=readme-ov-file#rosey-cloudcannon-connector). 
 
-Find more templates, themes and step-by-step Jekyll tutorials at [CloudCannon Community](https://cloudcannon.com/community/).
+## Plugins in Jekyll
+You can see in this site's prebuild that we move two plugins two our sites `_plugins` folder. Both customise the markdown processing of Jekyll, by adding onto how Kramdown parses the markdown. This affects page body content, and templating ran through the `markdownify` filter. This means neither body content, nor templating with the `markdownify` filter need to be tagged manually.
 
-[![Deploy to CloudCannon](https://buttons.cloudcannon.com/deploy.svg)](https://app.cloudcannon.com/register#sites/connect/github/CloudCannon/vonge-jekyll-bookshop-template)
+`jekyllMarkdownPlugin.rb` tags all block level elements with `data-rosey` tags. It uses the slugified text contents of the element for the value.
 
-## Features
+`jekyllImagePlugin.rb` removes the wrapping paragraph element from an image. This is important so that we don't have image links mistakenly appear in our translations.
 
-* Component library for website building
-* Fully configurable Website
-* Pre-built pages
-* Pre-styled components
-* Blog
-* Category pages
-* Testimonials
-* Portfolio
-* Live editing with [CloudCannon](http://cloudcannon.com/)
-* Optimised for editing in [CloudCannon](http://cloudcannon.com/)
-* Search engine optimisation
-
-## Develop
-
-Vonge was built with [Jekyll](http://jekyllrb.com/) version 4.2.1, but should support newer versions as well.
-
+## Local Development
 Install the dependencies for Bookshop:
 
 ~~~bash
@@ -47,6 +33,10 @@ Run the website:
 ~~~bash
 $ npm start
 ~~~
+
+
+> [!IMPORTANT]
+> When running locally, and on staging, translations will not work. Rosey runs on your production site so translations will appear there. 
 
 
 > [!IMPORTANT]
