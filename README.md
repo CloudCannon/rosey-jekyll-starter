@@ -142,3 +142,8 @@ $ npm start
 
 > [!IMPORTANT]
 > When running locally, the pagination will not work. Deploy to CloudCannon to see successful pagination. 
+
+
+## Maintaining this repo
+
+The directory `rosey-connector` is being updated from an [upstream repository](https://github.com/CloudCannon/rcc?tab=readme-ov-file#adding-the-rosey-connector-to-downstream-repositories). Make any changes to this directory upstream.
